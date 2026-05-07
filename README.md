@@ -80,4 +80,4 @@ start portafolio/index.html
 
 ---
 
-*Hecho con enfoque backend, pero con ojo para el detalle frontend.*
+
