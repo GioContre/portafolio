@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Alan Contreras | Portafolio de Desarrollador Backend</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Fuentes de Google -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Íconos Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Devicon - Logos de tecnologías -->
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet" />
+
+    <!-- Configuración de Tailwind -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#adc6ff",
+                        "background": "#0b1326",
+                        "primary-fixed": "#d8e2ff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-tertiary-container": "#1a2b3e",
+                        "on-secondary-container": "#aeb9d0",
+                        "surface-dim": "#0b1326",
+                        "inverse-primary": "#005ac2",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#2d3449",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-primary-fixed": "#001a42",
+                        "on-surface-variant": "#c2c6d6",
+                        "inverse-on-surface": "#283044",
+                        "on-primary": "#002e6a",
+                        "surface-container-low": "#131b2e",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-error": "#690005",
+                        "primary-container": "#4d8eff",
+                        "secondary-container": "#3e495d",
+                        "surface-container-highest": "#2d3449",
+                        "outline-variant": "#424754",
+                        "primary": "#adc6ff",
+                        "surface-container-lowest": "#060e20",
+                        "on-tertiary": "#213145",
+                        "surface-tint": "#adc6ff",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "secondary-fixed": "#d8e3fb",
+                        "on-primary-container": "#00285d",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#222a3d",
+                        "outline": "#8c909f",
+                        "inverse-surface": "#dae2fd",
+                        "surface-bright": "#31394d",
+                        "surface": "#0b1326",
+                        "surface-container": "#171f33",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-surface": "#dae2fd",
+                        "error-container": "#93000a",
+                        "tertiary": "#b7c8e1",
+                        "on-secondary": "#263143",
+                        "secondary": "#bcc7de",
+                        "tertiary-container": "#8292aa",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-background": "#dae2fd",
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                    spacing: {
+                        "container-max": "800px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "section-gap": "64px",
+                        "element-gap": "16px",
+                        "stack-md": "12px",
+                    },
+                    fontFamily: {
+                        "label-md": ["Inter"],
+                        "code": ["monospace"],
+                        "headline-sm": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                    },
+                    fontSize: {
+                        "label-md": ["12px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "code": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-sm": ["18px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "500" }],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Estilos base -->
+    <style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+
+        .material-symbols-outlined {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0F172A]/90 backdrop-blur-sm border-b border-slate-800">
+        <div class="flex justify-between items-center h-16 px-6 max-w-[800px] mx-auto">
+
+            <!-- Logo -->
+            <div class="text-lg font-bold text-slate-100 tracking-tighter font-['Space_Grotesk']">
+                ACPORTAFOLIO </div>
+
+            <!-- Enlaces de navegación -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a class="text-slate-400 font-medium hover:text-blue-400 transition-colors duration-200 font-['Space_Grotesk'] tracking-tight"
+                    href="#experiencia">Experiencia</a>
+                <a class="text-slate-400 font-medium hover:text-blue-400 transition-colors duration-200 font-['Space_Grotesk'] tracking-tight"
+                    href="#proyectos">Proyectos</a>
+                <a class="text-slate-400 font-medium hover:text-blue-400 transition-colors duration-200 font-['Space_Grotesk'] tracking-tight"
+                    href="#habilidades">Habilidades</a>
+                <a class="text-blue-500 border-b-2 border-blue-500 pb-1 font-['Space_Grotesk'] tracking-tight"
+                    href="#sobre-mi">Sobre Mí</a>
+            </nav>
+
+            <!-- Acciones -->
+            <div class="flex items-center gap-3 md:gap-4">
+                <span class="material-symbols-outlined text-blue-500 hidden sm:block"
+                    data-icon="terminal">terminal</span>
+                <a href="Curriculum Vitae Alan Giovanni Contreras Avila.pdf" download="CV_Alan_Contreras.pdf"
+                    class="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full font-label-md text-label-md active:scale-95 transition-transform inline-block">
+                    Currículum
+                </a>
+
+                <!-- Botón Menú Hamburguesa (Solo Móvil) -->
+                <button id="menu-toggle"
+                    class="md:hidden flex items-center justify-center p-1.5 text-slate-400 hover:text-white transition-colors bg-surface-container-high rounded-lg border border-outline-variant">
+                    <span id="menu-icon" class="material-symbols-outlined" data-icon="menu">menu</span>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <nav id="mobile-menu"
+            class="md:hidden absolute top-16 left-0 w-full bg-[#0F172A]/95 backdrop-blur-md border-b border-slate-800 flex-col shadow-2xl transition-all duration-300 max-h-0 overflow-hidden opacity-0">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a class="text-slate-400 font-medium hover:text-blue-400 transition-colors duration-200 font-['Space_Grotesk'] tracking-tight mobile-link"
+                    href="#sobre-mi">Sobre Mí</a>
+                <a class="text-slate-400 font-medium hover:text-blue-400 transition-colors duration-200 font-['Space_Grotesk'] tracking-tight mobile-link"
+                    href="#experiencia">Experiencia</a>
+                <a class="text-slate-400 font-medium hover:text-blue-400 transition-colors duration-200 font-['Space_Grotesk'] tracking-tight mobile-link"
+                    href="#proyectos">Proyectos</a>
+                <a class="text-slate-400 font-medium hover:text-blue-400 transition-colors duration-200 font-['Space_Grotesk'] tracking-tight mobile-link"
+                    href="#habilidades">Habilidades</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main class="max-w-[800px] mx-auto px-6 pt-32 pb-24">
+
+        <!-- ==================== HÉROE / PERFIL ==================== -->
+        <section class="flex flex-col md:flex-row gap-8 items-center md:items-start mb-section-gap" id="sobre-mi">
+
+            <!-- Foto de perfil -->
+            <div class="relative group">
+                <div class="w-40 h-40 rounded-xl overflow-hidden border border-outline-variant bg-surface-container">
+                    <img alt="Alan Contreras" class="w-full h-full object-cover"
+                        data-alt="retrato profesional de un desarrollador en un estudio con fondo azul oscuro"
+                        src="FOTO_PORTAFOLIO.png" />
+                </div>
+                <div
+                    class="absolute -bottom-2 -right-2 bg-primary-container p-1.5 rounded-lg border-2 border-background">
+                    <span class="material-symbols-outlined text-on-primary-container" data-icon="verified"
+                        data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+                </div>
+            </div>
+
+            <!-- Información del perfil -->
+            <div class="flex-1 space-y-stack-md text-center md:text-left">
+
+                <!-- Nombre y título -->
+                <div>
+                    <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Alan Contreras
+                    </h1>
+                    <p class="font-headline-sm text-headline-sm text-primary-fixed-dim">Desarrollador Backend Junior
+                    </p>
+                </div>
+
+                <!-- Ubicación -->
+                <div class="flex items-center justify-center md:justify-start gap-2 text-on-surface-variant">
+                    <span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                    <span class="font-label-md text-label-md">Tlalnepantla, Estado de México</span>
+                </div>
+
+                <!-- Biografía -->
+                <p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                    Desarrollo APIs y sistemas backend con Python, trabajando con bases de datos y despliegues en
+                    servidores.
+                    He llevado aplicaciones a producción, lo que me permite construir soluciones reales más allá del
+                    código.
+                </p>
+
+                <!-- Botones sociales -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-4">
+
+                    <a href="https://wa.me/525525319587" id="whatsapp-link" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-surface-container-high border border-outline-variant px-4 py-2 rounded-full hover:bg-surface-variant transition-colors group cursor-pointer">
+                        <svg class="w-5 h-5 fill-primary" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                        </svg>
+                        <span class="font-label-md text-label-md">WhatsApp</span>
+                    </a>
+                    <button onclick="copyEmail()"
+                        class="flex items-center gap-2 bg-surface-container-high border border-outline-variant px-4 py-2 rounded-full hover:bg-surface-variant transition-colors group cursor-pointer">
+                        <span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+                        <span class="font-label-md text-label-md">Correo</span>
+                    </button>
+                    <a href="https://github.com/AlanContrera" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-surface-container-high border border-outline-variant px-4 py-2 rounded-full hover:bg-surface-variant transition-colors group cursor-pointer">
+                        <span class="material-symbols-outlined text-primary" data-icon="code">code</span>
+                        <span class="font-label-md text-label-md">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alan-giovanni-contreras-avila-6a70283a6" target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 bg-surface-container-high border border-outline-variant px-4 py-2 rounded-full hover:bg-surface-variant transition-colors group cursor-pointer">
+                        <span class="material-symbols-outlined text-primary" data-icon="link">link</span>
+                        <span class="font-label-md text-label-md">LinkedIn</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== TECNOLOGÍAS PRINCIPALES ==================== -->
+        <section class="mb-section-gap" id="habilidades">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-3">
+                <span class="w-8 h-[2px] bg-primary"></span> Tecnologías Principales
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- 🔧 Backend (Tu Fuerte) -->
+                <div class="bg-surface-container border border-outline-variant rounded-xl p-5 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-2.5 py-1.5 rounded-lg">
+                            <i class="devicon-python-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">Python</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-2.5 py-1.5 rounded-lg">
+                            <i class="devicon-nodejs-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">Node.js</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-2.5 py-1.5 rounded-lg">
+                            <i class="devicon-express-original text-primary-fixed-dim text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">Express</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-2.5 py-1.5 rounded-lg">
+                            <i class="devicon-django-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">Django</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-2.5 py-1.5 rounded-lg">
+                            <span class="material-symbols-outlined text-primary-fixed-dim text-lg"
+                                data-icon="api">api</span>
+                            <span class="font-label-md text-label-md text-primary-fixed">APIs REST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🗄️ Bases de Datos -->
+                <div class="bg-surface-container border border-outline-variant rounded-xl p-5 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary" data-icon="storage">storage</span>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">Bases de Datos</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-3 py-1.5 rounded-lg">
+                            <i class="devicon-mysql-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">MySQL</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-3 py-1.5 rounded-lg">
+                            <i class="devicon-postgresql-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">PostgreSQL</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-3 py-1.5 rounded-lg">
+                            <i class="devicon-mongodb-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🌐 Frontend -->
+                <div class="bg-surface-container border border-outline-variant rounded-xl p-5 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary" data-icon="web">web</span>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-3 py-1.5 rounded-lg">
+                            <i class="devicon-html5-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">HTML</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-3 py-1.5 rounded-lg">
+                            <i class="devicon-css3-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">CSS</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-3 py-1.5 rounded-lg">
+                            <i class="devicon-javascript-plain colored text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ⚙️ Infra / DevOps -->
+                <div class="bg-surface-container border border-outline-variant rounded-xl p-5 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">Infra / DevOps</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-3 py-1.5 rounded-lg">
+                            <i class="devicon-linux-plain text-primary-fixed-dim text-lg"></i>
+                            <span class="font-label-md text-label-md text-primary-fixed">Linux</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-secondary-container/40 border border-secondary-container px-3 py-1.5 rounded-lg">
+                            <span class="material-symbols-outlined text-primary-fixed-dim text-lg"
+                                data-icon="dns">dns</span>
+                            <span class="font-label-md text-label-md text-primary-fixed">VPS</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCIA LABORAL ==================== -->
+        <section class="mb-section-gap" id="experiencia">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-8 flex items-center gap-3">
+                <span class="w-8 h-[2px] bg-primary"></span> Trayectoria Profesional
+            </h2>
+
+            <!-- 💻 Desarrollo Backend / Web -->
+            <div class="mb-10">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-primary" data-icon="code">code</span>
+                    <h3 class="font-headline-sm text-headline-sm text-primary-fixed-dim">Desarrollo Backend / Web</h3>
+                </div>
+
+                <div
+                    class="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[1px] before:bg-primary/30">
+
+                    <!-- Bucks Containers -->
+                    <div class="relative pl-10">
+                        <div
+                            class="absolute left-0 top-1.5 w-6 h-6 bg-primary-container border-2 border-primary rounded-full flex items-center justify-center">
+                            <span class="w-2 h-2 bg-on-primary-container rounded-full"></span>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:justify-between items-start mb-1">
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Desarrollador Backend / Web
+                            </h3>
+                            <span
+                                class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest bg-surface-container-high px-2 py-0.5 rounded">Sep
+                                2025 — Mar 2026</span>
+                        </div>
+                        <p class="font-label-md text-label-md text-primary mb-3">Bucks Containers</p>
+                        <p class="text-body-md font-body-md text-on-surface-variant mb-4">
+                            Durante mi servicio social participé en el desarrollo de una aplicación web completa bajo
+                            una arquitectura cliente-servidor, enfocándome principalmente en la lógica backend y la
+                            gestión de datos.
+                        </p>
+                        <ul class="space-y-2 text-body-md font-body-md text-on-surface-variant">
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                                    data-icon="check_circle">check_circle</span>
+                                Desarrollé una aplicación web funcional utilizando Python y JavaScript
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                                    data-icon="check_circle">check_circle</span>
+                                Diseñé e implementé una API REST para la comunicación entre servicios
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                                    data-icon="check_circle">check_circle</span>
+                                Modelé y gestioné bases de datos relacionales (MySQL y PostgreSQL)
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                                    data-icon="check_circle">check_circle</span>
+                                Realicé operaciones CRUD y estructuración eficiente de datos
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                                    data-icon="check_circle">check_circle</span>
+                                Desplegué la aplicación en un servidor VPS con entorno Linux en producción
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                                    data-icon="check_circle">check_circle</span>
+                                Configuré el entorno del servidor para asegurar el correcto funcionamiento del sistema
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                                    data-icon="check_circle">check_circle</span>
+                                Automaticé procesos mediante scripts en Python para optimizar tareas internas
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm mt-0.5"
+                                    data-icon="check_circle">check_circle</span>
+                                Implementé soluciones backend orientadas a mejorar la eficiencia operativa
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 🖥️ Soporte Técnico (Colapsable) -->
+            <div>
+                <button
+                    onclick="const content = document.getElementById('soporte-content'); const chevron = document.getElementById('soporte-chevron'); content.classList.toggle('max-h-0'); content.classList.toggle('max-h-[2000px]'); content.classList.toggle('opacity-0'); content.classList.toggle('opacity-100'); chevron.classList.toggle('rotate-180');"
+                    class="w-full cursor-pointer group">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-tertiary" data-icon="build">build</span>
+                            <h3
+                                class="font-headline-sm text-headline-sm text-tertiary group-hover:text-tertiary-fixed transition-colors">
+                                Experiencia en Soporte Técnico</h3>
+                        </div>
+                        <span id="soporte-chevron"
+                            class="material-symbols-outlined text-tertiary transition-transform duration-300"
+                            data-icon="expand_more">expand_more</span>
+                    </div>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-4 pl-7 text-left">
+                        Aunque actualmente estoy enfocado en desarrollo backend, mi experiencia en soporte técnico me
+                        permitió desarrollar habilidades sólidas en resolución de problemas, sistemas y trabajo con
+                        infraestructura tecnológica.
+                    </p>
+                </button>
+
+                <div id="soporte-content"
+                    class="max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out">
+
+                    <div
+                        class="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[1px] before:bg-outline-variant pt-2">
+
+                        <!-- Consorcio GDI -->
+                        <div class="relative pl-10">
+                            <div
+                                class="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-tertiary rounded-full">
+                            </div>
+                            <div class="flex flex-col md:flex-row md:justify-between items-start mb-1">
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Asistente de Soporte
+                                    Técnico</h3>
+                                <span
+                                    class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest bg-surface-container-high px-2 py-0.5 rounded">Ene
+                                    2025 — Sep 2025</span>
+                            </div>
+                            <p class="font-label-md text-label-md text-tertiary mb-2">Consorcio GDI · CDMX</p>
+                            <ul class="space-y-1.5 text-body-md font-body-md text-on-surface-variant">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Resolución de incidencias en hardware, software y red
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Soporte técnico a usuarios de forma remota y presencial
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Configuración y mantenimiento de equipos de cómputo
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Administración básica de infraestructura y dispositivos de red
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Gestión de incidencias y control de inventario tecnológico
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Hotel Century Reforma -->
+                        <div class="relative pl-10">
+                            <div
+                                class="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-outline rounded-full">
+                            </div>
+                            <div class="flex flex-col md:flex-row md:justify-between items-start mb-1">
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Auxiliar de Sistemas</h3>
+                                <span
+                                    class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest bg-surface-container-high px-2 py-0.5 rounded">Ago
+                                    2024 — Ene 2025</span>
+                            </div>
+                            <p class="font-label-md text-label-md text-tertiary mb-2">Hotel Century Reforma · CDMX</p>
+                            <ul class="space-y-1.5 text-body-md font-body-md text-on-surface-variant">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Mantenimiento y configuración de equipos de cómputo
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Apoyo en la administración de red interna
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Configuración de dispositivos de red y sistemas CCTV
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Resolución de incidencias técnicas
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Wise Interactions -->
+                        <div class="relative pl-10">
+                            <div
+                                class="absolute left-0 top-1.5 w-6 h-6 bg-background border-2 border-outline rounded-full">
+                            </div>
+                            <div class="flex flex-col md:flex-row md:justify-between items-start mb-1">
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Mesa de Ayuda (Help Desk)
+                                </h3>
+                                <span
+                                    class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest bg-surface-container-high px-2 py-0.5 rounded">Nov
+                                    2023 — Ago 2024</span>
+                            </div>
+                            <p class="font-label-md text-label-md text-tertiary mb-2">Wise Interactions · CDMX</p>
+                            <ul class="space-y-1.5 text-body-md font-body-md text-on-surface-variant">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Gestión y resolución de tickets de soporte técnico
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Atención a usuarios en incidencias de hardware y software
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Instalación y configuración de sistemas operativos
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-tertiary mt-1">·</span>
+                                    Soporte técnico remoto y presencial
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== PROYECTOS DESTACADOS ==================== -->
+        <section class="mb-section-gap" id="proyectos">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-8 flex items-center gap-3">
+                <span class="w-8 h-[2px] bg-primary"></span> Proyectos Destacados
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Proyecto 1: API de Autenticación con JWT -->
+                <div
+                    class="group bg-surface-container border border-outline-variant rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+                    <div class="h-40 bg-surface-variant relative overflow-hidden">
+                        <img alt="Backend Auth JWT"
+                            class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Captura de pantalla de la interfaz de inicio de sesión" src="LOGIN.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">API Autenticación JWT</h3>
+                        <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">Sistema completo de
+                            inicio de sesión y registro con protección de rutas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-primary-fixed-dim bg-primary-container/20 px-2 py-0.5 rounded">Node.js</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-primary-fixed-dim bg-primary-container/20 px-2 py-0.5 rounded">MongoDB</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-primary-fixed-dim bg-primary-container/20 px-2 py-0.5 rounded">JWT</span>
+                        </div>
+                        <a class="inline-flex items-center gap-2 text-primary hover:text-primary-fixed transition-colors text-label-md font-label-md pt-2"
+                            href="https://github.com/AlanContrera/backend-auth-jwt" target="_blank"
+                            rel="noopener noreferrer">
+                            Ver Código <span class="material-symbols-outlined text-sm"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Vault API -->
+                <div
+                    class="group bg-surface-container border border-outline-variant rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+                    <div class="h-40 bg-surface-variant relative overflow-hidden">
+                        <img alt="Vault API"
+                            class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                            data-alt="arte abstracto criptográfico con formas geométricas entrelazadas en tonos de pizarra y azul profundo"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlc9ac-UGxvagTK3tApZX_x5BfGJXrNU7EoBeDtPCOImPcFkcgbVx7bpWBQyncDVo409z4uNk-Fp-XNvw00RizB0NFsQxklio_rs8VmDF2aATAKFA6QGyAk7iFgq6RFXcATrSaglyJe4TaS4a0IXtglSuao6kvnZmruRuArvfanbXb4o2ObrwS9i04u5xmlo6pLb60DZNxKucDHI763kSJ166WftAi_GnhCUXE5FelxsgE_lcUFQNRzwfJGj57aTXRWD9btB6puYt1" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent"></div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface">Vault API</h3>
+                        <p class="text-body-md font-body-md text-on-surface-variant line-clamp-2">Capa de orquestación
+                            de pagos de alta seguridad con cumplimiento PCI-DSS.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-primary-fixed-dim bg-primary-container/20 px-2 py-0.5 rounded">Node.js</span>
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-wider text-primary-fixed-dim bg-primary-container/20 px-2 py-0.5 rounded">HSM</span>
+                        </div>
+                        <a class="inline-flex items-center gap-2 text-primary hover:text-primary-fixed transition-colors text-label-md font-label-md pt-2"
+                            href="#">
+                            Ver Documentación <span class="material-symbols-outlined text-sm"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== FORMACIÓN / EDUCACIÓN ==================== -->
+        <section class="mb-section-gap">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-3">
+                <span class="w-8 h-[2px] bg-primary"></span> Formación
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- Educación -->
+                <div class="bg-surface-container-high p-5 rounded-lg border border-outline-variant">
+                    <span class="material-symbols-outlined text-primary mb-3" data-icon="school">school</span>
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Ing. Sistemas Computacionales
+                    </h4>
+                    <p class="font-label-md text-label-md text-on-surface-variant">Universidad Insurgentes
+                    </p>
+                </div>
+
+                <!-- Certificación -->
+                <div class="bg-surface-container-high p-5 rounded-lg border border-outline-variant">
+                    <span class="material-symbols-outlined text-primary mb-3" data-icon="verified">verified</span>
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Python Programming Fundamentals</h4>
+                    <p class="font-label-md text-label-md text-on-surface-variant">Coursera / Microsoft</p>
+                    <p class="text-body-md font-body-md text-outline mt-1 italic">Certificación Profesional</p>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- ==================== PIE DE PÁGINA ==================== -->
+    <footer class="bg-[#0F172A] w-full bottom-0 border-t border-slate-800">
+        <div class="max-w-[800px] mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+
+            <!-- Marca -->
+            <div class="flex flex-col gap-2">
+                <span
+                    class="text-slate-200 font-semibold font-['Space_Grotesk'] text-xs uppercase tracking-widest">ACportafolio</span>
+                <span class="text-slate-500 font-['Space_Grotesk'] text-xs uppercase tracking-widest">© 2026 Diseñado
+                    para el Rendimiento</span>
+            </div>
+
+            <!-- Enlaces del pie de página -->
+            <div class="flex gap-6">
+                <a class="text-slate-500 hover:text-slate-200 transition-colors font-['Space_Grotesk'] text-xs uppercase tracking-widest"
+                    target="_blank" rel="noopener noreferrer" href="https://wa.me/525525319587">WhatsApp</a>
+
+                <button
+                    class="text-slate-500 hover:text-slate-200 transition-colors font-['Space_Grotesk'] text-xs uppercase tracking-widest cursor-pointer"
+                    onclick="copyEmail()">CORREO</button>
+
+                <a class="text-slate-500 hover:text-slate-200 transition-colors font-['Space_Grotesk'] text-xs uppercase tracking-widest"
+                    href="https://github.com/AlanContrera">GitHub</a>
+
+                <a class="text-slate-500 hover:text-slate-200 transition-colors font-['Space_Grotesk'] text-xs uppercase tracking-widest"
+                    href="https://www.linkedin.com/in/alan-giovanni-contreras-avila-6a70283a6" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Toast de Notificación -->
+    <div id="toast"
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-surface-container-high border border-outline-variant text-on-surface px-6 py-3 rounded-full shadow-lg font-label-md transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+        <span>¡Correo copiado al portapapeles!</span>
+    </div>
+
+    <script>
+        // Función para copiar correo
+        function copyEmail() {
+            navigator.clipboard.writeText('giovannicontre24@gmail.com').then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0', 'translate-y-4');
+                toast.classList.add('opacity-100', 'translate-y-0');
+
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100', 'translate-y-0');
+                    toast.classList.add('opacity-0', 'translate-y-4');
+                }, 3000);
+            });
+        }
+
+        // Lógica del Menú Hamburguesa para móviles
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                // Abrir menú
+                mobileMenu.classList.remove('max-h-0', 'opacity-0');
+                mobileMenu.classList.add('max-h-64', 'opacity-100');
+                menuIcon.setAttribute('data-icon', 'close');
+                menuIcon.innerText = 'close';
+            } else {
+                // Cerrar menú
+                mobileMenu.classList.remove('max-h-64', 'opacity-100');
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+                menuIcon.setAttribute('data-icon', 'menu');
+                menuIcon.innerText = 'menu';
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // Cerrar el menú automáticamente al hacer clic en un enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+    </script>
+</body>
+
+</html>
